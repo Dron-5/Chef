@@ -68,6 +68,12 @@ item31 = types.KeyboardButton("Способ приготовления6:")
 item32 = types.KeyboardButton("Вернуться назад")
 markup8.add(item30, item31, item32)
 
+markup9 = types. ReplyKeyboardMarkup(resize_keyboard = True)
+item33 = types.KeyboardButton("Запеченая курица")
+item34 = types.KeyboardButton("Мясо")
+item35 = types.KeyboardButton("Рыба")
+item36 = types.KeyboardButton("НаЗаД")
+markup9.add(item33, item34, item35, item36)
 
 
 
@@ -249,7 +255,7 @@ def ingredients(message):
     elif message.text == "Салаты":
        bot.send_message(message.chat.id, "Выберите салаты:", reply_markup=markup5)
     elif message.text == "НАЗАД":
-         bot.send_message(message.chat.id, "Выберите, что хотите готовить:", reply_markup=markup)
+       bot.send_message(message.chat.id, "Выберите, что хотите готовить:", reply_markup=markup)
     elif message.text == "Цезарь":
        bot.send_message(message.chat.id, "Выберите дальнейшее действие:", reply_markup=markup6)
     elif message.text == "Ингредиенты4:":
@@ -401,9 +407,12 @@ def ingredients(message):
 
 #ГОРЯЧЕЕ
 
-
     elif message.text == "Гарнир":
-       bot.send_message(message.chat.id, "Выберите гарнир:")
+       bot.send_message(message.chat.id, "Выберите гарнир:", reply_markup=markup9)
+    elif message.text == "НаЗаД":
+       bot.send_message(message.chat.id, "Выберите, что хотите готовить:", reply_markup=markup)
+
+   
 
     elif message.text == "Десерт":
        bot.send_message(message.chat.id, "Выберите десерт:")
